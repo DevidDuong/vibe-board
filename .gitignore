@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Build / packaging output (packaging/ClipFlow.spec is tracked)
+build/
+dist/
+*.app/
+
+# Local data, logs, and anything that could hold clipboard contents
+*.sqlite3
+*.sqlite3-*
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.log
+.clipflow-dev-data/
+
+# Environment / secrets
+.env
+.env.*
+
+# macOS
+.DS_Store
+
+# Editor (shared launch/settings are tracked; personal state is not)
+.vscode/*
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+
+# Rendered UI screenshots (scripts/render_ui_states.py)
+ui-review/

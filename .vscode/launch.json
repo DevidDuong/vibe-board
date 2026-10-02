@@ -1,0 +1,39 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Vibe-Board (dev data)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "CLIPFLOW_DATA_DIR": "${workspaceFolder}/.clipflow-dev-data",
+                "CLIPFLOW_DEBUG": "1"
+            }
+        },
+        {
+            "name": "Vibe-Board (real data)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "macOS menu-bar probe",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/macos_probe.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Render UI states",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/render_ui_states.py",
+            "console": "integratedTerminal"
+        }
+    ]
+}

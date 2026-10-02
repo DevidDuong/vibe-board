@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clipflow"
+version = "0.1.0.dev0"
+description = "Privacy-first macOS menu-bar library for terminal commands."
+readme = "README.md"
+requires-python = ">=3.12"
+# Source of truth for dependencies. requirements.txt is a generated, fully pinned
+# lock of a known-good environment (see README "Dependencies").
+dependencies = [
+    "PySide6>=6.8,<7",
+    "pyobjc-framework-Cocoa>=11,<13; sys_platform == 'darwin'",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8,<10",
+    "pytest-qt>=4.4,<5",
+    "ruff>=0.6",
+    "pyinstaller>=6.10,<7",
+]
+
+[project.scripts]
+clipflow = "clipflow.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = [
+    "macos: uses real AppKit APIs (private pasteboard only); skipped off macOS",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["clipflow", "fakes"]
